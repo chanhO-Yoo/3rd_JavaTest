@@ -21,6 +21,14 @@ public class User implements Cloneable{
 		this.gender = gender;
 		this.phone = phone;
 	}
+	public User(User u) {
+		this.id = u.id;
+		this.password = u.password;
+		this.name = u.name;
+		this.age = u.age;
+		this.gender = u.gender;
+		this.phone = u.phone;
+	}
 	
 	//getter & setter
 	//getter
@@ -99,7 +107,8 @@ public class User implements Cloneable{
 	}
 	
 	public Object clone() throws CloneNotSupportedException{
-		User user = (User)super.clone();
+//		User user = (User)super.clone();
+		User user = new User(id,password,name,age,gender,phone);
 		return user;
 	}
 }

@@ -106,9 +106,20 @@ public class User implements Cloneable{
 		}
 	}
 	
+	/*
+	 * 공변반환타입
+	 * 오버라이딩은 부모 메서드의 시그니쳐와 완벽하게 동일해야한다.
+	 * 리턴타입에 있어 같거나 자식타입으로 재작성 할 수 있다.
+	 * 
+	 * Object타입의 후손들이 들어갈 수 있다.
+	 * Object -> User가능
+	 */
+	@Override
 	public Object clone() throws CloneNotSupportedException{
 //		User user = (User)super.clone();
 		User user = new User(id,password,name,age,gender,phone);
 		return user;
 	}
+	
+	
 }
